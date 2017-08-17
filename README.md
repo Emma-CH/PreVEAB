@@ -1,5 +1,9 @@
 # PreVEAB
-A computational package that can measure the strength of passage adaptation and predict efficacy of a candidate vaccine strain based on its nucleotide sequence
+A computational package targets to measure the strength of passage adaptation and predict efficacy of a candidate vaccine strain based on its nucleotide sequence
+
+
+## Background
+Vaccine efficacy for the H3N2 Influenza virus has been alarmingly decreasing in recent years, but underlying causes for this observation are still elusive. Passage adaptation refers to substitutions accumulated during vaccine production might contribute to the vaccine efficacy. Using a statistical method called mutational mapping and 32,278 H3N2 hemagglutinin sequences, we identified 14 important codons driving passage adaptation in the embryonated egg. Based on enrichment scores derived from these codons, we defined an adaptive distance (AD) calibrating the strength of positive selection on each influenza strain. A very strong negative relationship between adaptive distance and vaccine efficacy (R-square=0.776) indicate the essential impact of passage adaptation on vaccine efficacy. For the first time, we provide a direct and comprehensive evidence that passage adaptation in the embryonated egg is a major determinant of the recent reduction in vaccine efficacy.
 
 
 ## Installing
@@ -18,56 +22,6 @@ program](http://home.uchicago.edu/rhudson1/source/mksamples.html) with the `-T`
 option. ms program has the full-assemblage of the options needed to generate
 complex demographic histories of the sample. 
 
-The two most important parameters in the simulation is the mutation rate of SNVs
-(`--snv_rate`) and CNVs (`--cnv_rate`). The mutational events in CSiTE are
-simulated according to the Poisson process with user specified parameters (see
-[Notes](https://github.com/hchyang/CSiTE#notes) for extra discussions).  
-
-Other than the rate of CNVs, there are five other parameters guiding CNVs
-simulation. 
-
-`--cnv_length_beta` can be used to specify the beta/mean parameter of the
-exponential distribution (We assume the length of CNVs follows an exponential
-distribution. This parameter specifies the mean length of the CNV events).
-
-`--cnv_length_max` can be used to set the upper limit of CNVs' length (This will
-effectively truncate the exponential distribution at this limit). 
-
-`--del_prob` A CNV event can be a deletion or an amplification. Using this
-parameter, we can specify the probability that a CNV event is a deletion.
-
-`--copy_max` can be used to set the upper bound of an amplification event.  When
-an amplification event happens, it will randomly pick a copy number according to
-a geometric like distribution with Pr(n+1)=p\*Pr(n). The p parameter can be
-specified by `-c/--copy_parameter`. The overall distribution will be normalized
-s.t. the total probability is 1. 
-
-The coalescent tree only describes the polymorphic part of the sample. You can
-also simulate the truncal part of the tumor evolution (tumorigenesis) through
-two different approaches: a) specify the trunk length e.g. using
-`--trunk_length`. `--trunk_length` accepts a single float number that can be
-used as the branch length leading to the root of the coalescent tree.  b)
-specify the events on the trunk explicitly in a file through `--trunk_vars
-filename`. The format of the trunk variants file is described in the later
-section.
-
-When the number of simulated cells is very large, the computational load can be
-very heavy. Given the fact that most of the mutational events are extremely
-rare, we implemented a pruning algorithm to trim the tree using `--prune` and
-`--prune_proportion` options. For example, if you want to simulate the somatic
-variants for a population containing 1,000,000 cells, after you setting `--prune
-100` or `--prune_proportion 0.0001`, all subtrees with <=100 tips will be
-trimmed into a tip node, which means there will be no polymorphic variants on
-those subtrees with <=100 tips. So the tips belonging to the same subtree (with
-<=100 tips) will show the same genotypes.
-
-Other convenient options including:
-- -D/--depth to simulate the variants under different sequencing coverage (i.e.
-  given the specified coverage d, we will simulate a sequence coverage of x,
-  where x is sampled from Poission(d)). 
-- -p/--ploidy to set the ploidy of tumor cells to simulate
-- -P/--purity to set the purity of tumor sample
-- --length to set the length of sequence to simulate
 
 ##### Notes
 By default, the branch length from the ms program is measured in 4N
@@ -159,21 +113,6 @@ options can be used to accelerate the simulation when your tree is huge.
     `csite.py -t ms_tree.txt -P 0.8 --length 135534747 -r 10 -R 0.1 -D 60 -S
     snvs_freq.txt --trunk_length 2.0 --prune 20`
 
-    or
-
-    `csite.py -t ms_tree.txt -P 0.8 --length 135534747 -r 10 -R 0.1 -D 60 -S
-    snvs_freq.txt --trunk_length 2.0 --prune_proportion 0.02`
-
-* If you want to save the SNVs genotypes for each single cell for exactly the
-same simulation as above, use the options `--snv_genotype` and
-`--random_seed`.
-
-    `csite.py -t ms_tree.txt -P 0.8 --length 135534747 -r 10 -R 0.1 -D 60 -S
-    snvs_freq.txt --trunk_length 2.0 --prune_proportion 0.02 --snv_geneotype
-    snvs_genotype.txt --random_seed xxxx`
-
-    P.S. The random seed xxxx can be found in the log file of the previous
-    simulation.
 
 ## Author
 
