@@ -1,23 +1,13 @@
 # PreVEAB
 A computational package that can measure the strength of passage adaptation and predict efficacy of a candidate vaccine strain based on its nucleotide sequence
 
-# Coalescent Simulator for Tumor Evolution (CSiTE)
-
-CSiTE is a Python program for jointly simulating Single Nucleotide Variants
-(SNVs) and Copy Number Variants (CNVs) for a sample of tumor cells. It takes a
-coalescent tree (in the newick format) and simulates both types of somatic
-mutations along the history of the genealogy. At the end of the simulation, the
-program can output simulated variants (in the setting of a bulk tumor).  The
-program also allows for simulating genotypes of individual tumor cells (i.e.
-single cell data). 
 
 ## Installing
 
-CSiTE is written in Python3 and requires numpy.
+PreVEAB is written in perl and R.
 
-CSiTE can be downloaded from github:
+PreVEAB can be downloaded from github:
 
-    git clone https://github.com/hchyang/CSiTE.git
 
 ## Running CSiTE
 
@@ -333,9 +323,13 @@ same simulation as above, use the options `--snv_genotype` and
     P.S. The random seed xxxx can be found in the log file of the previous
     simulation.
 
-## Authors
+## Author
 
-* [Hechuan Yang](https://github.com/hchyang)
+* Hui Chen : chenh1@gis.a-star.edu.sg
+
+## Corresponding Author
+
+*   Weiwei Zhai : zhaiww11@gis.a-star.edu.sg
 
 ## License
 
