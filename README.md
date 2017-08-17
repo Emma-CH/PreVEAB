@@ -1,5 +1,5 @@
 # PreVEAB
-A computational package targets to measure the strength of passage adaptation and predict efficacy of a candidate vaccine strain based on its nucleotide sequence
+A computational package targets to measure the strength of passage adaptation and predict efficacy of a candidate vaccine strain based on its nucleotide sequence.
 
 
 ## Background
@@ -23,42 +23,33 @@ option. ms program has the full-assemblage of the options needed to generate
 complex demographic histories of the sample. 
 
 
-##### Notes
-By default, the branch length from the ms program is measured in 4N
-generations. CSiTE will simulate SNVs/CNVs events following the Poisson process.
-For example, if we set -r 100, this is equivalent to set the population rescaled
-parameter θ=4Nu as 100 (see ms manual for details). 
-
 ### Input files
 
-#### Tree file (-t/--tree)
+#### Option I : 14 alleles file
 
-Tree file should be in newick format, for example:
+ 14 allels collected from 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226, 246 should be list as following:
 
-    ((2:0.083,4:0.083):0.345,(5:0.322,(1:0.030,3:0.030):0.292):0.105);
+    Codon   AminoAcid
+    138 S
+    145 N 
+    156 H
 
-#### Trunk variants file (--trunk\_vars)
+Note: 
+1) Please be aware that if the allele state is missing or it is not recorded in our background the calculation will be terminated immediately.
 
-You can simulate truncal variants by specify `--trunk_length`, or import trunk
-variants directly using `--trunk_vars` option.  The file format of truncal
-variants is like:
+#### Option II : HA1 nucleotide sequence file
+
+ Sequence file includes the detailed nucleotide sequence of HA1 nucletide seuqence as following:
     
-    #parental start end copy
-    0 1 1 0
-    1 12 123 +3 
-    0 12 123 -1
+    CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
 
-- **parental**:  which parental copy the variant locates in (0 means one of the
-  parental copy, 1 means the other copy)
-- **start**:     the start position of the variant
-- **end**:       the end position of the variant
-- **copy**:      an integer. 0: SNV, -1: deletion, +int: amplification
-
-P.S. start and end are 0 based. And the region of each variant is similar to the
-bed file (inclusive on the left, but exclusive on the right end,
-i.e.\[start,end)).
+Note: 
+1) Please be very careful about the the starting position, and make sure the starting codon is from "QNL...".
+2) Please be aware that if the allele state is missing or it is not recorded in our background, the calculation will be terminated immediately.
 
 ### Output files
+
+#### Adaptive distance & predicted vaccine efficacy
 
 #### SNVs file (-S/--snv)
 
