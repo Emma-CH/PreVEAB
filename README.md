@@ -6,7 +6,7 @@ A computational package that can measure the strength of passage adaptation and 
 
 PreVEAB is written in perl and R.
 
-PreVEAB can be downloaded from github:
+PreVEAB can be downloaded from github: https://github.com/Emma-CH/PreVEAB
 
 
 ## Running CSiTE
