@@ -47,15 +47,18 @@ Note: 1) Please be very careful about the the starting position, and make sure t
 
 ### Output files
 
-#### Adaptive distance & predicted vaccine efficacy
+#### Adaptive distance & predicted vaccine efficacy (2 numeric numbers)
 
-#### Scatterplot
+#### Scatterplot (.pdf file)
 
 This scatterplot describes  
 
-#### PCA analysis
+#### PCA analysis (.pdf file)
 
 This PCA 
+    
+    CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
+
 
 ### Examples
 
