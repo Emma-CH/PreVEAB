@@ -34,8 +34,7 @@ complex demographic histories of the sample.
     145 N 
     156 H
 
-Note: 
-1) Please be aware that if the allele state is missing or it is not recorded in our background the calculation will be terminated immediately.
+Note: 1) Please be aware that if the allele state is missing or it is not recorded in our background the calculation will be terminated immediately.
 
 #### Option II : HA1 nucleotide sequence file
 
@@ -43,33 +42,20 @@ Note:
     
     CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
 
-Note: 
-1) Please be very careful about the the starting position, and make sure the starting codon is from "QNL...".
+Note: 1) Please be very careful about the the starting position, and make sure the starting codon is from "QNL...".
 2) Please be aware that if the allele state is missing or it is not recorded in our background, the calculation will be terminated immediately.
 
 ### Output files
 
 #### Adaptive distance & predicted vaccine efficacy
 
-#### SNVs file (-S/--snv)
+#### Scatterplot
 
-This file contains the frequency information of simulated SNVs. It contains four
-columns. 
-- **position**:        the position (0-based) of SNVs
-- **true\_freq**:      the true frequency of the alternative allele in the
-  sample. 
-- **total\_depth**:    the simulated total coverage of tumor and normal cells at
-  the position of SNV. 
-- **simulated\_freq**: the observed frequency of alternative allele across tumor
-  and normal cell population.
+This scatterplot describes  
 
-#### Genotype file (--snv\_genotype)
+#### PCA analysis
 
-This file contains the snv\_genotype of each tumor cell at SNV loci. Each SNV
-has one record. The first column is the coordinate of the SNV. Subsequently,
-there is one column for each tumor cell. The snv\_genotype is in the form of
-‘M:N’. M denotes the number of alternative allele and N denotes the number of
-reference allele.
+This PCA 
 
 ### Examples
 
@@ -89,20 +75,6 @@ frequncy of the simulated SNVs to file 'snvs\_freq.txt'.
 
     `csite.py -t ms_tree.txt -P 0.8 --length 135534747 -r 10 -R 0.1 -D 60 -S
     snvs_freq.txt`
-
-* There are no truncal muations in the simulation above. If you want to simulate
-truncal muations, use the option `--trunk_length`.
-
-    `csite.py -t ms_tree.txt -P 0.8 --length 135534747 -r 10 -R 0.1 -D 60 -S
-    snvs_freq.txt --trunk_length 2.0`
-
-* If you want to ignore the variants with the frequency <=0.01, you can use
-`--prune 20` or `--prune_proportion 0.02` (we use `--prune 20` instead of
-`--prune 10` for the cells are diploid in the our simulation). These two
-options can be used to accelerate the simulation when your tree is huge.
-
-    `csite.py -t ms_tree.txt -P 0.8 --length 135534747 -r 10 -R 0.1 -D 60 -S
-    snvs_freq.txt --trunk_length 2.0 --prune 20`
 
 
 ## Author
