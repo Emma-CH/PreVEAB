@@ -9,7 +9,7 @@ PreVEAB is written in perl and R.
 PreVEAB can be downloaded from github: https://github.com/Emma-CH/PreVEAB
 
 
-## Running CSiTE
+## Running PreVEAB
 
 To run the program, a coalescent tree which captures the ancestral relationships
 of the tumor cells in a sample is required. The input tree file should be in the
@@ -126,154 +126,6 @@ there is one column for each tumor cell. The snv\_genotype is in the form of
 ‘M:N’. M denotes the number of alternative allele and N denotes the number of
 reference allele.
 
-#### Individual CNV file (--ind\_cnvs)
-
-This file contains the CNVs on each parental copy of each single cell in the
-sample. There are five columns in this file:
-    
-    #cell parental  start     end       copy
-    1       0       7912422   7930111   2
-    1       1       43110140  43341629  1
-    2       0       2255734   2299608   -1
-    2       0       22660687  22788472  -1
-    2       1       59756841  61142076  3
-
-- **cell**:     the id of each cell in the sample
-- **parental**: which parental copy the variant locates in (0 means one of the
-  parental copy, 1 means another copy, 2 means the third copy if your sample is
-  triploid...)
-- **start**:    the start position of the CNV
-- **end**:      the end position of the CNV
-- **copy**:     an integer. -1: deletion; positive integer: amplification
-
-P.S. start and end are 0 based. And the region of each variant is similar to the
-bed file (inclusive on the left, but exclusive on the right end,
-i.e.\[start,end)).
-
-#### Named tree file (-T/--named\_tree)
-
-CSiTE can output a [NHX
-file](https://sites.google.com/site/cmzmasek/home/software/forester/nhx) with
-each node named. Combined with nodes variants file below, users can fingure out
-the locations of SNVs/CNVs on the tree.  We name each internal node with the
-format 'Node:XXX', XXX is an integer and start from N+1, where N is the number
-of leaves in the input tree. And 'Node:N+1' is the name of the root node. The
-names of each leaf will be kept as the input tree.
-
-#### Nodes variants file (-n/--nodes\_vars)
-
-CSiTE can output the variants (SNVs/CNVs) occured on the branch leading to each
-node. There are five columns in this file:
-
-    #node parental        start   end     copy 
-    ...
-    ...
-    ...
-
-- **node**:     the id of nodes or leaves in the sample
-- **parental**: which parental copy the variant locates in (0 means one of the
-  parental copy, 1 means another copy, 2 means the third copy if your sample is
-  triploid...)
-- **start**:    the start position of the variant
-- **end**:      the end position of the variant
-- **copy**:     an integer. 0: SNV; -1: deletion; positive integer:
-  amplification
-
-#### CNV profile file (--cnv\_profile)
-
-This file contains the CNV profile across the whole segment. There are 3 columns
-in this file. The first column is the start of the CNV region, and the second is
-the end of the CNV region. Both breakpoints are 0-based, defined CNVs covered on
-\[start, end). The last column is the total copies of each region.
-
-#### parental copy file (--parental\_copy)
-
-This file contains the information of parental copy for each SNV. The first
-column is the coordinate of the SNV, and followed by N columns if the ploidy is
-N.
-
-#### Log file (-g/--log)
-
-This file contains logging information, e.g. the command line parameters and the
-random seed used. You can use these information to replicate the simulation.
-After setting the `--loglevel` as DEBUG, CSiTE will output detailed information
-of the simulation process. 
-
-### All options
-
-    usage: csite.py [-h] -t TREE [-r SNV_RATE] [-R CNV_RATE] [-d DEL_PROB]
-                    [-l CNV_LENGTH_BETA] [-L CNV_LENGTH_MAX] [-c COPY_PARAMETER]
-                    [-C COPY_MAX] [-p PLOIDY] [-P PURITY] [-D DEPTH] [-x PRUNE]
-                    [-X PRUNE_PROPORTION] [-s RANDOM_SEED] [-S SNV] [-V CNV]
-                    [-n NODES_SNVS] [-T NAMED_TREE] [-g LOG] [-G {DEBUG,INFO}]
-                    [--cnv_profile CNV_PROFILE] [--snv_genotype SNV_GENOTYPE]
-                    [--ind_cnvs IND_CNVS] [--parental_copy PARENTAL_COPY]
-                    [--trunk_vars TRUNK_VARS] [--trunk_length TRUNK_LENGTH]
-                    [--expands EXPANDS] [--length LENGTH] [-v]
-
-    Simulate SNVs/CNVs on a coalescent tree in newick format
-
-    optional arguments:
-      -h, --help            show this help message and exit
-      -t TREE, --tree TREE  a tree in newick format
-      -r SNV_RATE, --snv_rate SNV_RATE
-                            the muation rate of SNVs [300]
-      -R CNV_RATE, --cnv_rate CNV_RATE
-                            the muation rate of CNVs [3]
-      -d DEL_PROB, --del_prob DEL_PROB
-                            the probability of being deletion for a CNV mutation
-                            [0.5]
-      -l CNV_LENGTH_BETA, --cnv_length_beta CNV_LENGTH_BETA
-                            the mean of CNVs length [20000000]
-      -L CNV_LENGTH_MAX, --cnv_length_max CNV_LENGTH_MAX
-                            the maximium of CNVs length [40000000]
-      -c COPY_PARAMETER, --copy_parameter COPY_PARAMETER
-                            the p parameter of CNVs' copy number distribution
-                            [0.5]
-      -C COPY_MAX, --copy_max COPY_MAX
-                            the maximium ADDITIONAL copy of a CNVs [5]
-      -p PLOIDY, --ploidy PLOIDY
-                            the ploidy to simulate [2]
-      -P PURITY, --purity PURITY
-                            the purity of tumor cells in the simulated sample
-                            [1.0]
-      -D DEPTH, --depth DEPTH
-                            the mean depth for simulating coverage data [50]
-      -x PRUNE, --prune PRUNE
-                            trim all the children of the nodes with equal or less
-                            than this number of tips [0]
-      -X PRUNE_PROPORTION, --prune_proportion PRUNE_PROPORTION
-                            trim all the children of the nodes with equal or less
-                            than this proportion of tips [0.0]
-      -s RANDOM_SEED, --random_seed RANDOM_SEED
-                            the seed for random number generator [None]
-      -S SNV, --snv SNV     the output file to save SNVs [output.snvs]
-      -V CNV, --cnv CNV     the output file to save CNVs [output.cnvs]
-      -n NODES_SNVS, --nodes_snvs NODES_SNVS
-                            the output file to save SNVs/CNVs on each node
-                            [output.nodes_vars]
-      -T NAMED_TREE, --named_tree NAMED_TREE
-                            the output file in NHX format to save the tree with
-                            all nodes named [output.named_tree.nhx]
-      -g LOG, --log LOG     the log file [log.txt]
-      -G {DEBUG,INFO}, --loglevel {DEBUG,INFO}
-                            the logging level [INFO]
-      --cnv_profile CNV_PROFILE
-                            the file to save CNVs profile [output.cnv.profile]
-      --snv_genotype SNV_GENOTYPE
-                            the file to save SNV genotypes for each cell
-      --ind_cnvs IND_CNVS   the file to save CNVs for each cell individual
-      --parental_copy PARENTAL_COPY
-                            the file to save parental copy for each SNV
-      --trunk_vars TRUNK_VARS
-                            the trunk variants file supplied by user
-      --trunk_length TRUNK_LENGTH
-                            the length of the truncal branch [0]
-      --expands EXPANDS     the basename of the file to output the snv and segment
-                            data for EXPANDS [None]
-      --length LENGTH       the length of the sequence to simulate [100000000]
-      -v, --version         show program's version number and exit
-
 ### Examples
 
 * Simulate the coalescent tree of a sample of 1000 tumor cells, which are
@@ -335,5 +187,3 @@ same simulation as above, use the options `--snv_genotype` and
 
 This project is licensed under the GNU GPLv3 License - see the
 [LICENSE](LICENSE) file for details.
-
-
