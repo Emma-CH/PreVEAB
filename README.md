@@ -27,14 +27,15 @@ complex demographic histories of the sample.
 
 #### Option I : 14 alleles file
 
- 14 allels collected from 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226, 246 should be list as following:
+ 14 allels collected from 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226, 246 should be list in two columns as following:
 
     Codon   AminoAcid
-    138 S
-    145 N 
-    156 H
+     138        S
+     145        N 
+     156        H
 
-Note: 1) Please be aware that if the allele state is missing or it is not recorded in our background the calculation will be terminated immediately.
+Note: 1) Please make sure that the codons recorded in alleles file is exactly consistent with our list.
+2) Please be aware that if the allele state is missing or it is not recorded in our background the calculation will be terminated immediately.
 
 #### Option II : HA1 nucleotide sequence file
 
@@ -51,13 +52,11 @@ Note: 1) Please be very careful about the the starting position, and make sure t
 
 #### Scatterplot (.pdf file)
 
-This scatterplot describes  
+This scatterplot figure describes distribution of adaptive distance and vaccine efficacy. And R square is calculated and list at the topright. Please refer the file called "scatterplot.pdf" as listed.
 
 #### PCA analysis (.pdf file)
 
-This PCA 
-    
-    CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
+This PCA figure describes distribution of virus strains based on the first and second PCA dimentions. The dot hightligh in black color is the isolated examined in our current analysis.
 
 
 ### Examples
