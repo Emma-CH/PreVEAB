@@ -118,7 +118,7 @@ options can be used to accelerate the simulation when your tree is huge.
 
 * Hui Chen : chenh1@gis.a-star.edu.sg
 
-## Corresponding Author
+## Corresponding author
 
 *   Weiwei Zhai : zhaiww11@gis.a-star.edu.sg
 
