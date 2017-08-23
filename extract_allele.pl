@@ -9,7 +9,6 @@
 use strict;
 use warnings;
 
-
 $FILE=$ARGV[0];
 
 @CODON=(138,145,156,158,159,160,183,186,190,193,194,219,226,246);
@@ -50,7 +49,3 @@ else
 	}
 	close DEMO;
 }
-
-
-
-
