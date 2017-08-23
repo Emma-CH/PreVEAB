@@ -69,9 +69,9 @@ This scatterplot figure describes correlation of adaptive distance and vaccine e
 
 Note: 1) Output file called "DEMO" incudes 14 allelic information.
 
-* Calculated the predicted vaccine efficacy of candidate virus osilate
+* Calculated the predicted vaccine efficacy of candidate virus isolate
 
-    `source("PreVEAB.R")`
+    `source("PreVEAB.R")`
 
 Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "gisaid_32278_H3N2_HA1_ES_byJul2016" are listed.
 2) Two output files including "outfile.txt" and "Correlation_AdaptiveDistance_VE.pdf" will be finally generated.
