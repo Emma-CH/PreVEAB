@@ -15,7 +15,10 @@ PreVEAB can be downloaded from github: https://github.com/Emma-CH/PreVEAB
 
 ## Running PreVEAB
 
-The 
+To run the program, two reference files and one alleles file are necessary. In the reference file called "ES_EggStrains", the enrichemnt scores of each allele from each codon over egg strains are listed, while in the file called "gisaid_32278_H3N2_HA1_ES_byJul2016", the 14 alleles across 14 key codons are summarized for all 32,278 virus isolates. 
+
+Apart from these two reference files, another "14 alleles file" is also needed. In this file, The allels across 14 codons are listed. User can choose to either directly provide this file or apply our script called "extract_alleles.pl" to generate this file based on the original HA1 nucleotide sequence.
+
 
 ### Input files
 
@@ -40,7 +43,6 @@ Note: 1) Please make sure that the codons recorded in alleles file are exactly c
     
     [example II]
     >Seq_ID
-    
     CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
 
 Note: 1) Please be very careful about the the starting codons, and make sure that the sequence is from "QNL...".
