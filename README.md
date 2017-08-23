@@ -22,37 +22,40 @@ The
 
 #### Option I : 14 alleles file
 
- 14 allels collected from 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226, 246 should be list in two columns as following:
+ 14 allels over 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226 and 246 should be list in two columns as following:
 
     Codon   AminoAcid
      138        S
      145        N 
      156        H
 
-Note: 1) Please make sure that the codons recorded in alleles file is exactly consistent with our list.
-2) Please be aware that if the allele state is missing or it is not recorded in our background the calculation will be terminated immediately.
+Note: 1) Please make sure that the codons recorded in alleles file are exactly consistent with our list.
+2) Please be aware that if any allele state is missing or not recorded in our reference file "ES_EggStrains", the analysis will be terminated immediately.
 
 #### Option II : HA1 nucleotide sequence file
 
- Sequence file includes the detailed nucleotide sequence of HA1 nucletide seuqence as following:
+ Sequence file including the detailed H3 HA1 nucleotide sequence of HA1 should be listed as following or in a fasta format:
     
+    [example I]
+    CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
+    
+    [example II]
+    >Seq_ID
     CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
 
-Note: 1) Please be very careful about the the starting position, and make sure the starting codon is from "QNL...".
-2) Please be aware that if the allele state is missing or it is not recorded in our background, the calculation will be terminated immediately.
+Note: 1) Please be very careful about the the starting codons, and make sure that the sequence is from "QNL...".
+2) Please be aware that if any allele state is missing or not recorded in our reference file "ES_EggStrains", the analysis will be terminated immediately.
+3) An corresponding alleles file including allele states over 14 codons will be generated after precessing using "extract_allele.pl".
 
 ### Output files
 
-#### Adaptive distance & predicted vaccine efficacy (2 numeric numbers)
+#### Adaptive distance & predicted vaccine efficacy (outfile.txt)
 
-#### Scatterplot (.pdf file)
-
-This scatterplot figure describes distribution of adaptive distance and vaccine efficacy. And R square is calculated and list at the topright. Please refer the file called "scatterplot.pdf" as listed.
-
-#### PCA analysis (.pdf file)
+#### PCA analysis & Scatterplot (Correlation_AdaptiveDistance_VE.pdf)
 
 This PCA figure describes distribution of virus strains based on the first and second PCA dimentions. The dot hightligh in black color is the isolated examined in our current analysis.
 
+This scatterplot figure describes distribution of adaptive distance and vaccine efficacy. And R square is calculated and list at the topright. Please refer the file called "scatterplot.pdf" as listed.
 
 ### Examples
 
