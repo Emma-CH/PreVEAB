@@ -17,7 +17,6 @@ PreVEAB can be downloaded from github: https://github.com/Emma-CH/PreVEAB
 
 The 
 
-
 ### Input files
 
 #### Option I : 14 alleles file
@@ -51,39 +50,42 @@ Note: 1) Please be very careful about the the starting codons, and make sure tha
 
 #### Adaptive distance & predicted vaccine efficacy (outfile.txt)
 
+Adaptive distance and predicated vaccine efficacy of the candidate virus isolate are listed out.
+
 #### PCA analysis & Scatterplot (Correlation_AdaptiveDistance_VE.pdf)
 
-This PCA figure describes distribution of virus strains based on the first and second PCA dimentions. The dot hightligh in black color is the isolated examined in our current analysis.
+PCA figure describes the distribution of 32,278 virus strains in terms of the first and second PCA dimentions. The dot hightlighed in black color represents the virus isolate examined in the current analysis.
 
-This scatterplot figure describes distribution of adaptive distance and vaccine efficacy. And R square is calculated and list at the topright. Please refer the file called "scatterplot.pdf" as listed.
+This scatterplot figure describes correlation of adaptive distance and vaccine efficacy (VE). And R square is also calculated and list at the topright. The adaptived distance and predicted vaccine efficacy of the examined virus isolate are also listed in the figure.
 
 ### Examples
 
 * Simulate the coalescent tree of a sample of 1000 tumor cells, which are
-sampled from a exponetially growing tumor. 
-(consult the manual of ms for more information)
 
-    `ms 1000 1 -T -G 1 |tail -n1 > ms_tree.txt`
+    `perl extract_alleles.pl DEMO_seq`
+
+Note: 1) Please be very careful about the the starting codons, and make sure that the sequence is from "QNL...".
+2) Please be aware that if any allele state is missing or not recorded in our reference file "ES_EggStrains", the analysis will be terminated immediately.
+3) An corresponding alleles file including allele states over 14 codons will be generated after precessing using "extract_allele.pl".
 
 * Simulate the somatic SNVs of this sample. We assume the sequencing depth is
-60, and the purity of the sample is 0.8, which means there are 250 normal
-cells other than these 1000 tumor cells. Other settings are: 
-a) the mutation rate of SNVs and CNVs are 10 and 0.1 respectively; 
-b) the sequence length is 135534747 (chr10 of hg19); 
-c) the cells of the sample are diploid. We save the
-frequncy of the simulated SNVs to file 'snvs\_freq.txt'.
 
-    `csite.py -t ms_tree.txt -P 0.8 --length 135534747 -r 10 -R 0.1 -D 60 -S
-    snvs_freq.txt`
+    `source("PreVEAB.R")`
+
+Note: 1) Please be very careful about the the starting codons, and make sure that the sequence is from "QNL...".
+2) Please be aware that if any allele state is missing or not recorded in our reference file "ES_EggStrains", the analysis will be terminated immediately.
+3) An corresponding alleles file including allele states over 14 codons will be generated after precessing using "extract_allele.pl".
 
 
 ## Author
 
 * Hui Chen : chenh1@gis.a-star.edu.sg
 
+
 ## Corresponding author
 
 *   Weiwei Zhai : zhaiww11@gis.a-star.edu.sg
+
 
 ## License
 
