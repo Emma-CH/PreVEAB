@@ -87,7 +87,7 @@ Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and
 
 ## Corresponding author
 
-*   Weiwei Zhai : zhaiww11@gis.a-star.edu.sg
+*   Weiwei Zhai : zhaiww1@gis.a-star.edu.sg
 
 
 ## License
