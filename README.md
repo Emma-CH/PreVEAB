@@ -40,6 +40,7 @@ Note: 1) Please make sure that the codons recorded in alleles file are exactly c
     
     [example II]
     >Seq_ID
+    
     CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
 
 Note: 1) Please be very careful about the the starting codons, and make sure that the sequence is from "QNL...".
@@ -60,21 +61,18 @@ This scatterplot figure describes correlation of adaptive distance and vaccine e
 
 ### Examples
 
-* Simulate the coalescent tree of a sample of 1000 tumor cells, which are
+* Extract the 14 allelic information in terms of the nucleotide sequence, use the option
 
     `perl extract_alleles.pl DEMO_seq`
 
-Note: 1) Please be very careful about the the starting codons, and make sure that the sequence is from "QNL...".
-2) Please be aware that if any allele state is missing or not recorded in our reference file "ES_EggStrains", the analysis will be terminated immediately.
-3) An corresponding alleles file including allele states over 14 codons will be generated after precessing using "extract_allele.pl".
+Note: 1) Output file called "DEMO" incudes 14 allelic information.
 
-* Simulate the somatic SNVs of this sample. We assume the sequencing depth is
+* Calculated the predicted vaccine efficacy of candidate virus osilate
 
     `source("PreVEAB.R")`
 
-Note: 1) Please be very careful about the the starting codons, and make sure that the sequence is from "QNL...".
-2) Please be aware that if any allele state is missing or not recorded in our reference file "ES_EggStrains", the analysis will be terminated immediately.
-3) An corresponding alleles file including allele states over 14 codons will be generated after precessing using "extract_allele.pl".
+Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "gisaid_32278_H3N2_HA1_ES_byJul2016" are listed.
+2) Two output files including "outfile.txt" and "Correlation_AdaptiveDistance_VE.pdf" will be finally generated.
 
 
 ## Author
