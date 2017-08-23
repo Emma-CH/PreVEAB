@@ -24,7 +24,7 @@ Apart from these two reference files, another "14 alleles file" is also needed. 
 
 #### Option I : 14 alleles file
 
- 14 allels over 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226 and 246 should be list in two columns as following:
+ 14 allels over 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226 and 246 should be listed in two columns as following:
 
     Codon   AminoAcid
      138        S
