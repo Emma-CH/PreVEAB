@@ -43,7 +43,7 @@ Note: 1) Please make sure that the codons recorded in alleles file are exactly c
     CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
     
     [example II]
-    
+    
     >Seq_ID
     
     CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
