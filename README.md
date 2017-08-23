@@ -38,11 +38,11 @@ Note: 1) Please make sure that the codons recorded in alleles file are exactly c
 
  Sequence file including the detailed H3 HA1 nucleotide sequence of HA1 should be listed as following or in a fasta format:
     
-    [example I]
+    \*example I\*
     
     CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
     
-    [example II]
+    \*example II\*
     
     >Seq_ID
     
