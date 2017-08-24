@@ -104,7 +104,7 @@ for (i in 1:30)
 
 smoothScatter(COUNT$X,COUNT$Y,colramp = colorRampPalette(c("cornflowerblue","slategray1","mistyrose", "pink","red")),pch="",xlab="PC1 (22%)",ylab="PC2 (21%)",main="Distribution of H3N2 HA1 sequences")
 points(x=PC1test,y=PC2test,pch=19,cex=1)
-text(x=PC1test,y=PC2test-1,labels="test strain", cex= .8, offset = 10)
+text(x=PC1test,y=PC2test-1,labels="candidate vaccine strain", cex= .8, offset = 10)
 
 ############## scatterplot ###################
 VE=c(0.46,0.32,0.40,0.10,0.07,NA)
