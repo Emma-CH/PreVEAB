@@ -114,7 +114,7 @@ plot(DIS$SpatialDistance[1:6], VE, pch = 16, type = 'p', las = 1,cex=1.2,
      xlab = 'Adaptive distance',
      ylab = 'Vaccine efficacy',
      main = "Correlation between adaptive distance and vaccine efficacy")
-abline(lmsum,lwd=2)
+abline(lmsum$coefficients[1:2],lwd=2)
 r2 = lmsum$adj.r.squared
 mylabel = bquote(italic(R)^2 == .(format(r2, digits = 3)))
 text(x = 22, y = 0.45, labels = mylabel)
