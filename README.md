@@ -75,7 +75,8 @@ Note: 1) Output file called "DEMO" includes the allelic states across 14 codons.
 * Calculated the predicted vaccine efficacy of candidate virus isolate
 
     Unix environment:
-    'R <PreVEAB.R --vanilla'
+    `R <PreVEAB.R --vanilla`
+    
     Windows environment: 
     `source("PreVEAB.R")`
 
