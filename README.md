@@ -75,12 +75,12 @@ Note: 1) Output file called "DEMO" includes the allelic states across 14 codons.
 * Calculated the predicted vaccine efficacy of candidate virus isolate
 
     Unix environment:
-    `R <PreVEAB.R --vanilla`
+    `Rscript PreVEAB.R` or `R <PreVEAB.R --vanilla`
     
     Windows environment: 
     `source("PreVEAB.R")`
 
-Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "gisaid_32278_H3N2_HA1_ES_byJul2016" are listed.
+Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "gisaid_32278_H3N2_HA1_ES_byJul2016" are listed under current directory.
 2) Two output files including "outfile.txt" and "Correlation_AdaptiveDistance_VE.pdf" will be finally generated.
 
 
