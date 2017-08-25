@@ -24,12 +24,12 @@ Apart from these two reference files, another "14 alleles file" is also needed t
 
 #### File I : ES_EggStrains
 
-14 allels over 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226 and 246 should be listed in two columns as following:
+Allels acorss 329 codon positions are recorded as following:
 
-    Codon   AminoAcid
-     138        S
-     145        N 
-     156        H
+    Codon   AminoAcid EnrichmentScore
+      1         H          1.384
+      1         S          0.000
+      1         Q          0.995
 
 Note: 1) Please make sure that the codons recorded in this alleles file must be exactly consistent with our list.
 
