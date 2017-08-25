@@ -68,9 +68,10 @@ This scatterplot figure describes the correlation between adaptive distance and 
 
 * Extract the 14 allelic states in terms of the nucleotide sequence, use the option
 
-    `perl extract_alleles.pl DEMO_seq`
+    `perl extract_alleles.pl DEMO_seq DEMO`
 
-Note: 1) Output file called "DEMO" includes the allelic states across 14 codons.
+  Note: 1) Please define the input file (DEMO_seq) and output file (DEMO).
+  2) Output file includes the allelic states across 14 codons.
 
 * Calculated the predicted vaccine efficacy of candidate virus isolate
 
