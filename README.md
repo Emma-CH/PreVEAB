@@ -91,14 +91,14 @@ This scatterplot figure describes the correlation between adaptive distance and 
 
 * Extract the 14 allelic states in terms of the nucleotide sequence, use the option
 
-    `perl extract_alleles.pl [input_sequence_file] [output_allelic_file]`
+    `perl extract_alleles.pl [input_sequence_file] [output_allelic_file]`
 
 * Calculated the predicted vaccine efficacy of candidate virus isolate
 
     Unix environment:
-    `Rscript PreVEAB.R [input_allelic_file] [output_pdf_file] [output_txt_file]`
-    
-    Windows environment: 
+    `Rscript PreVEAB.R [input_allelic_file] [output_pdf_file] [output_txt_file]`
+
+    Windows environment:
     `source("PreVEAB.R")`
 
 
