@@ -20,6 +20,31 @@ To run the program, two reference files and one alleles file are necessary. In t
 Apart from these two reference files, another "14 alleles file" is also needed to describe the information of candicate vaccine strain. In this file, The allelic states of 14 codons are listed. Users can choose to either directly provide this file (Input files - Option I) or generate this file using our script called "extract_alleles.pl" (Input files - Option II).
 
 
+### Background enrichement score files
+
+#### File I : ES_EggStrains
+
+14 allels over 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226 and 246 should be listed in two columns as following:
+
+    Codon   AminoAcid
+     138        S
+     145        N 
+     156        H
+
+Note: 1) Please make sure that the codons recorded in this alleles file must be exactly consistent with our list.
+
+#### File II : GISAID_32278_H3N2_HA1_ES_byJul2016
+
+14 allels over 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226 and 246 should be listed in two columns as following:
+
+    Codon   AminoAcid
+     138        S
+     145        N 
+     156        H
+
+Note: 1) Please make sure that the codons recorded in this alleles file must be exactly consistent with our list.
+
+
 ### Input files
 
 #### Option I : 14 alleles file
@@ -93,7 +118,7 @@ This scatterplot figure describes the correlation between adaptive distance and 
     Windows environment: 
     `source("PreVEAB.R")`
 
-  Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "gisaid_32278_H3N2_HA1_ES_byJul2016" are listed undeR   current directory.
+  Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" are listed undeR   current directory.
   2) Two output files including "outfile.txt" and "Correlation_AdaptiveDistance_VE.pdf" will be finally generated.
 
 
