@@ -64,16 +64,28 @@ PCA figure describes the distribution of 32,278 virus strains in terms of the fi
 
 This scatterplot figure describes the correlation between adaptive distance and vaccine efficacy. R square labeled at the topright of the figure is provided as referece. The adaptived distance and predicted vaccine efficacy of the candidate vaccine virus isolate are also listed in the figure.
 
-### Examples
+
+### Command
 
 * Extract the 14 allelic states in terms of the nucleotide sequence, use the option
+
+    `perl extract_alleles.pl [sequence_file] [allelic_file]`
+
+* Calculated the predicted vaccine efficacy of candidate virus isolate
+
+    Unix environment:
+    `Rscript PreVEAB.R [allelic_file] [output_pdf_file] [output_txt_file]`
+    
+    Windows environment: 
+    `source("PreVEAB.R")`
+
+
+### Examples
 
     `perl extract_alleles.pl DEMO_seq DEMO`
 
   Note: 1) Please define the input file (DEMO_seq) and output file (DEMO).
   2) Output file includes the allelic states across 14 codons.
-
-* Calculated the predicted vaccine efficacy of candidate virus isolate
 
     Unix environment:
     `Rscript PreVEAB.R DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
@@ -81,8 +93,8 @@ This scatterplot figure describes the correlation between adaptive distance and 
     Windows environment: 
     `source("PreVEAB.R")`
 
-Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "gisaid_32278_H3N2_HA1_ES_byJul2016" are listed under current directory.
-2) Two output files including "outfile.txt" and "Correlation_AdaptiveDistance_VE.pdf" will be finally generated.
+  Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "gisaid_32278_H3N2_HA1_ES_byJul2016" are listed undeR   current directory.
+  2) Two output files including "outfile.txt" and "Correlation_AdaptiveDistance_VE.pdf" will be finally generated.
 
 
 ## Author
