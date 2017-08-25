@@ -76,7 +76,7 @@ This scatterplot figure describes the correlation between adaptive distance and 
 * Calculated the predicted vaccine efficacy of candidate virus isolate
 
     Unix environment:
-    `Rscript PreVEAB.R` or `R <PreVEAB.R --vanilla`
+    `Rscript PreVEAB.R DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
     
     Windows environment: 
     `source("PreVEAB.R")`
