@@ -91,12 +91,12 @@ This scatterplot figure describes the correlation between adaptive distance and 
 
 * Extract the 14 allelic states in terms of the nucleotide sequence, use the option
 
-    `perl extract_alleles.pl [sequence_file] [allelic_file]`
+    `perl extract_alleles.pl [input_sequence_file] [output_allelic_file]`
 
 * Calculated the predicted vaccine efficacy of candidate virus isolate
 
     Unix environment:
-    `Rscript PreVEAB.R [allelic_file] [output_pdf_file] [output_txt_file]`
+    `Rscript PreVEAB.R [input_allelic_file] [output_pdf_file] [output_txt_file]`
     
     Windows environment: 
     `source("PreVEAB.R")`
@@ -104,17 +104,22 @@ This scatterplot figure describes the correlation between adaptive distance and 
 
 ### Examples
 
+* Extract the 14 allelic states in terms of the nucleotide sequence, use the option
+
     `perl extract_alleles.pl DEMO_seq DEMO`
+   
+    Note: Please make sure that the input files called "DEMO_seq" must be located under current directory.
 
-    Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" are listed   
-    under current directory.
-    2) Two output files including "outfile.txt" and "Correlation_AdaptiveDistance_VE.pdf" will be finally generated.
-  
+* Calculated the predicted vaccine efficacy of candidate virus isolate
+
+    Unix environment:
     `Rscript PreVEAB.R DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
+    
+    Windows environment: 
+    `source("PreVEAB.R")`
 
-    Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" are listed   
-    under current directory.
-    2) Two output files including "outfile.txt" and "Correlation_AdaptiveDistance_VE.pdf" will be finally generated.
+    Note: Please make sure that three input files including "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" must be   
+    located under current directory.
 
 
 ## Author
