@@ -31,17 +31,15 @@ Allels acorss 329 codon positions are recorded as following:
       1         S          0.000
       1         Q          0.995
 
-Note: 1) Please make sure that the codons recorded in this alleles file must be exactly consistent with our list.
 
 #### File II : GISAID_32278_H3N2_HA1_ES_byJul2016
 
-Enrichment scores of 14 allelsacross 14 codon positions are listed for each virus sequence:
+Enrichment scores of 14 allelsacross 14 codon positions are listed for each virus sequence, and 32,278 virus strains collected from GISAID and 98 potential vaccine virus strains are recorded together in this file: 
 
      ID              Year       Passage     138    145    156    158    159    160    183    186    190    193    194    219    226    246
      EPI_ISL_167277  2003     EGG_VACCINE  0.936  1.436  1.475  0.832  1.039  1.235  10.236  3.513  0.828  1.297  0.707  0.857 0.597  0.936
      EPI_ISL_174195  2003     EGG_VACCINE  0.936  1.436  1.475  0.664  1.039  1.235  10.236  3.513  0.828  1.297  0.707  0.857 0.597  0.936
      EPI_ISL_2674    2003     EGG_VACCINE  0.936  1.436  1.475  0.664  1.039  1.235   0.945  3.513  0.828  1.297  11.77  0.857 0.597  0.936    
-Note: 1) Please make sure that the codons recorded in this alleles file must be exactly consistent with our list.
 
 
 ### Input files
@@ -110,11 +108,13 @@ This scatterplot figure describes the correlation between adaptive distance and 
 
   Note: 1) Please define the input file (DEMO_seq) and output file (DEMO).
   2) Output file includes the allelic states across 14 codons.
-
+  
     Unix environment:
+    
     `Rscript PreVEAB.R DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
     
     Windows environment: 
+    
     `source("PreVEAB.R")`
 
   Note: 1) Please make sure that three files including "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" are listed undeR   current directory.
