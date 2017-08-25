@@ -35,12 +35,10 @@ Note: 1) Please make sure that the codons recorded in this alleles file must be 
 
 #### File II : GISAID_32278_H3N2_HA1_ES_byJul2016
 
-14 allels over 14 codon positions including 138, 145, 156, 158, 159, 160, 183, 186, 190, 193, 194, 219, 226 and 246 should be listed in two columns as following:
+Enrichment scores of 14 allelsacross 14 codon positions are listed for each virus sequence:
 
-    Codon   AminoAcid
-     138        S
-     145        N 
-     156        H
+     ID              Year       Passage     138    145    156    158    159    160    183    186    190    193    194    219    226    246
+     EPI_ISL_167277  2003     EGG_VACCINE  0.936  1.436  1.475  0.832  1.039  1.235  10.236  3.513  0.828  1.279  0.707  0.857 0.597  0.936
 
 Note: 1) Please make sure that the codons recorded in this alleles file must be exactly consistent with our list.
 
