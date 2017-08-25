@@ -107,7 +107,7 @@ This scatterplot figure describes the correlation between adaptive distance and 
 * Extract the 14 allelic states in terms of the nucleotide sequence, use the option
 
     `perl extract_alleles.pl DEMO_seq DEMO`
-   
+    
     Note: Please make sure that the input files called "DEMO_seq" must be located under current directory.
 
 * Calculated the predicted vaccine efficacy of candidate virus isolate
@@ -115,10 +115,10 @@ This scatterplot figure describes the correlation between adaptive distance and 
     Unix environment:
     `Rscript PreVEAB.R DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
     
-    Windows environment: 
+    Windows environment:
     `source("PreVEAB.R")`
-
-    Note: Please make sure that three input files including "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" must be   
+    
+    Note: Please make sure that three input files including "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" must be 
     located under current directory.
 
 
