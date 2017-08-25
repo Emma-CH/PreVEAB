@@ -38,8 +38,9 @@ Note: 1) Please make sure that the codons recorded in this alleles file must be 
 Enrichment scores of 14 allelsacross 14 codon positions are listed for each virus sequence:
 
      ID              Year       Passage     138    145    156    158    159    160    183    186    190    193    194    219    226    246
-     EPI_ISL_167277  2003     EGG_VACCINE  0.936  1.436  1.475  0.832  1.039  1.235  10.236  3.513  0.828  1.279  0.707  0.857 0.597  0.936
-
+     EPI_ISL_167277  2003     EGG_VACCINE  0.936  1.436  1.475  0.832  1.039  1.235  10.236  3.513  0.828  1.297  0.707  0.857 0.597  0.936
+     EPI_ISL_174195  2003     EGG_VACCINE  0.936  1.436  1.475  0.664  1.039  1.235  10.236  3.513  0.828  1.297  0.707  0.857 0.597  0.936
+     EPI_ISL_2674    2003     EGG_VACCINE  0.936  1.436  1.475  0.664  1.039  1.235   0.945  3.513  0.828  1.297  11.77  0.857 0.597  0.936    
 Note: 1) Please make sure that the codons recorded in this alleles file must be exactly consistent with our list.
 
 
