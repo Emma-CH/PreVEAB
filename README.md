@@ -97,12 +97,15 @@ This scatterplot figure describes the correlation between adaptive distance and 
 * Calculated the predicted vaccine efficacy of candidate virus isolate
 
     Unix environment:
+    
     `Rscript PreVEAB.R [input_allelic_file] [output_pdf_file] [output_txt_file]`
 
     Windows CMD environment:
+   
     `Rscript.exe [input_allelic_file] [output_pdf_file] [output_txt_file]`
 
     Windows R environment:
+    
     `Args[1]<-[input_allelic_file]  Args[2]<-[output_pdf_file]  Args[3]<-[output_txt_file]  source("PreVEAB.R")`
 
 
@@ -117,13 +120,16 @@ This scatterplot figure describes the correlation between adaptive distance and 
 * Calculated the predicted vaccine efficacy of candidate virus isolate
 
     Unix environment:
-    `Rscript PreVEAB.R DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
+    
+    `Rscript PreVEAB.R DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
     
     Windows CMD environment:
-    `"C:\Program Files\R\R-3.4.1\bin\Rscript.exe" DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
+    
+    `"C:\Program Files\R\R-3.4.1\bin\Rscript.exe" DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
     
     Windows R environment:
-    `Args[1]<-"DEMO"    Args[2]<-"Correlation_AdaptiveDistance_VE.pdf"    Args[3]<-"outfile.txt"    source("PreVEAB.R")`
+    
+    `Args[1]<-"DEMO"    Args[2]<-"Correlation_AdaptiveDistance_VE.pdf"    Args[3]<-"outfile.txt"    source("PreVEAB.R")`
     
     Note: Please make sure all input files such as "DEMO_seq", "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" and two     background enrichment score files "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" must be located under current directory.
 
