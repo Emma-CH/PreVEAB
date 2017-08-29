@@ -26,7 +26,7 @@ Regarding to the preparation of the alleles file, users are able to either direc
 "PreVEAB.R" targets to generate two outfiles carrying the information of adaptive distance and predicted vaccine efficacy of candidate vaccine virus isolate.
 
 
-### Background enrichement scores files
+### Background ES files
 
 #### File I : ES_EggStrains
 
