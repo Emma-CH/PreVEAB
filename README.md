@@ -1,35 +1,36 @@
 # PreVEAB
-PreVEAB takes account of the nucleotide seuqence or the amino acid states of designated 14 codon positions and targets to measure the strength of passage adaptation and predict the potential vaccine efficacy of the candidate vaccine strain.
+PreVEAB takes account of nucleotide seuqence or amino acid states of the designated 14 codon positions and aims to measure the strength of passage adaptation and predict the vaccine efficacy of the candidate vaccine virus isolate.
 
 
 ## Background
-Vaccine efficacy of the H3N2 influenza virus has been sharply dropped recently, which might be contributed by two major reasons including antigenic drift and mutations occurring during vaccine production. And the mutations accumulated during the virus propagations in hosts or cells such as embryonated eggs and mammalian cell medium are called passage adaption. Hereby, we put efforts to measure the impact of passage adaption on vaccine efficacy.
+Vaccine efficacy of influenza A H3N2 virus has sharply dropped recently, which might be majorly contributed by virus antigenic drift or mutations occurring during vaccine production. These mutations accumulated during virus propagation in hosts or cells such as embryonated eggs and mammalian cell mediums are defined as passage adaption. Hereby, we targets to measure the effects of passage adaption on vaccine efficacy.
 
-32,278 H3N2 HA1 hemagglutinin (HA) sequences have been collected from Global Initiative on Sharing All Influenza Data (GISAID) and detailed passage annotation information have been also extracted at the meanwhile. After applying two statistical methods, 14 codon positions are detected with strong signature of passage adaptation in embyonated egg.
+32,278 H3N2 hemagglutinin (HA1) sequences as well as passage annotation information have been collected from Global Initiative on Sharing All Influenza Data (GISAID) EpiFlu database. Furthermore, 14 codon positions have been identified with strong signature of passage adaptation in embyonated egg using two statistical tests.
 
-Since it is necessary that the seed precursor virus used for vaccine production must be generated in eggs, to find out the internal relationship between the egg passage adaptation and the reduced vaccine efficacy is urgent and meaningful. A parameter called enrichment score (ES) is defined and applied to measure the strength of passage adaptation. According to the enrichment scores across 14 key codon positions, principle component analysis has been performed to uncover the distribution of 32,278 background virus sequences as well as a batch of vaccine strains. The pattern displays that WHO vaccine strains (distantly located from the major clustering of background sequences) bear significant evidence of passage adaptation, and subsequently "adaptive distance" has been defined.
+According to the knowledge that the seed precursor influenza virus used for vaccine production must be generated in eggs, to find out the impact of egg passage adaptation on vaccine efficacy is urgent and meaningful. In order to quantitative measure the strength of passage adaptation, enrichment scores (ES) of allels from 14 pre-defined codon positions are calculated for 32,278 background virus sequences and 99 vaccine virus sequences. Principle component analysis (PCA) uncovers the different distribution of 32,278 background virus and vaccine strains and vaccine strains (distantly located from the major clustering of background strains) clearly bear significant evidence of passage adaptation. Subsequently, "adaptive distance" has been defined to measure the strength of passage adaptation.
 
-Two curves representing the trends of adaptive distances and vaccine efficacies ranged from 2010 to 2014 year indicate the essential impact of passage adaptation on vaccine efficacy. Hence, we have developed this computational strategy which privides a way to measure the adaptive distance of candidate vaccine strains and in further predict the vaccine efficacy for public evaluation. 
+Trends of adaptive distances and vaccine efficacies ranged from 2010 to 2014 year indicate the essential contribution of egg passage adaptation to the reduced vaccine efficacy. Therefor, we developed this computational strategy which provides a way to measure the adaptive distance of candidate vaccine virus strain and in further predict the vaccine efficacy for public consideration. 
 
 
 ## Installing
 
 PreVEAB is written in perl and R.
+
 PreVEAB can be downloaded from github: https://github.com/Emma-CH/PreVEAB
 
 
-## Running PreVEAB
+## Running
 
 To run the program, two background enrichment scores files and one alleles file are necessary. 
-Regarding to the preparation of the alleles file, users are able to choose to either directly provide it (Input files - Option I) or generate it using the script called "extract_alleles.pl" (Input files - Option II).
-After calculation using the script called "PreVEAB.R", two outfiles including the information of adaptive distance and predicated vaccine efficacy are generated finally.
+Regarding to the preparation of the alleles file, users are able to either directly provide it (Input files - Option I) or generate it using perl script "extract_alleles.pl" (Input files - Option II).
+"PreVEAB.R" targets to generate two outfiles carrying the information of adaptive distance and predicted vaccine efficacy of candidate vaccine virus isolate.
 
 
 ### Background enrichement scores files
 
 #### File I : ES_EggStrains
 
-Allels and the corresponding enrichment scores acorss 329 codon positions are recorded as following:
+All alleles and their enrichment scores acorss 329 codon positions are recorded as following:
 
     Codon   AminoAcid EnrichmentScore
       1         H          1.384
@@ -38,7 +39,7 @@ Allels and the corresponding enrichment scores acorss 329 codon positions are re
 
 #### File II : GISAID_32278_H3N2_HA1_ES_byJul2016
 
-Enrichment scores of 14 allels across 14 codon positions are listed for each virus sequence, and 32,278 virus strains collected from GISAID and 99 vaccine virus strains are recorded together in this file: 
+Enrichment scores of 14 alleles across 14 codon positions are extracted for each virus sequence, and information of 32,278 background virus strains and 99 vaccine virus strains are all listed as following: 
 
      ID              Year       Passage     138    145    156    158    159    160    183    186    190    193    194    219    226    246
      EPI_ISL_167277  2003     EGG_VACCINE  0.936  1.436  1.475  0.832  1.039  1.235  10.236  3.513  0.828  1.297  0.707  0.857 0.597  0.936
@@ -57,12 +58,12 @@ Enrichment scores of 14 allels across 14 codon positions are listed for each vir
      145        N 
      156        H
 
-Note: 1) Please make sure that the codons recorded in this alleles file must be exactly consistent with our list.
-2) Please be aware that if any allele state is missing or not recorded in our reference file "ES_EggStrains", the analysis will be terminated immediately.
+Note: 1) Please make sure that the 14 codons described in alleles file is exactly consistent with our designated codon list.
+2) Please be aware that if any allele state is missing or its enrichment score is not recorded in file "ES_EggStrains", the analysis will be terminated immediately.
 
-#### Option II : H3N2 HA1 nucleotide sequences file
+#### Option II : H3N2 HA1 nucleotide sequence file
 
- Sequence file including the detailed H3N2 HA1 nucleotide sequences should be listed in the following format:
+ Sequence file including information of H3N2 HA1 nucleotide sequence should follow the standard formats:
     
     *format 1*
     
@@ -74,40 +75,40 @@ Note: 1) Please make sure that the codons recorded in this alleles file must be 
     
     CAAAAACTTCCTGGAAATGACAACAGCACGGCAACGCTGTGCCTTGGGCA...
 
-Note: 1) Please be very careful about the the starting codons, and make sure that the sequence is from "QNL...".
-2) Please be aware that if any allele state is missing or not recorded in our reference file "ES_EggStrains", the analysis will be terminated immediately.
-3) An corresponding alleles file including allele states over 14 codons will be generated after precessing using "extract_allele.pl".
+Note: 1) Please be very careful about the starting codons, and guarantee that the sequence states from "QNL...".
+2) Please be aware that if any allele state is missing or its enrichment ecore is not recorded in file "ES_EggStrains", the analysis will be terminated immediately.
+3) The corresponding alleles file will be generated from "extract_allele.pl".
 
 
 ### Output files
 
-#### Adaptive distance & predicted vaccine efficacy (outfile.txt)
+#### Adaptive distance & predicted vaccine efficacy (e.g. outfile.txt)
 
-Adaptive distance and predicated vaccine efficacy of the candidate vaccine virus isolate are listed out.
+Adaptive distance and predicted vaccine efficacy of the candidate vaccine virus isolate are listed out:
 
     Vaccine efficacy = 0.17
     Adaptive distance = 21.64
 
-#### PCA analysis & Scatterplot (Correlation_AdaptiveDistance_VE.pdf)
+#### PCA & Scatterplot (e.g. Correlation_AdaptiveDistance_VE.pdf)
 
-PCA figure describes the distribution of 32,278 virus strains in terms of the first and second PCA dimentions. The dot hightlighed in black color represents the candidate vaccine virus isolate in the current analysis.
+PCA figure describes the distribution of 32,278 background virus strains (32,278 dots)　in terms of the first and second PCA dimensions. The dot highlighted in black color represents the candidate vaccine virus isolate under current analysis.
 
-This scatterplot figure describes the correlation between adaptive distance and vaccine efficacy. R square labeled at the topright of the figure is provided as referece. The adaptived distance and predicted vaccine efficacy of the candidate vaccine virus isolate are also listed in the figure.
+Scatterplot figure describes the strongly negative correlation between adaptive distance and vaccine efficacy. R square value labeled at the topright is provided as well. The adaptive distance and predicted vaccine efficacy of the candidate vaccine virus isolate are also described in the figure.
 
 
 ### Commands
 
-* Extract the 14 allelic states in terms of the nucleotide sequence, use the option
+* Extract the 14 allelic states from the nucleotide sequence, using the option:
 
     `perl extract_alleles.pl [input_sequence_file] [output_allelic_file]`
 
-* Calculated the predicted vaccine efficacy of candidate virus isolate
+* Calculated the predicted vaccine efficacy of candidate vaccine virus isolate, using the option:
 
-    Unix environment:
+    Unix command:
     
     `Rscript PreVEAB.R [input_allelic_file] [output_pdf_file] [output_txt_file]`
 
-    Windows CMD environment:
+    Windows CMD command:
    
     `Rscript.exe [input_allelic_file] [output_pdf_file] [output_txt_file]`
 
@@ -118,19 +119,19 @@ This scatterplot figure describes the correlation between adaptive distance and 
 
 ### Examples
 
-* Extract the 14 allelic states in terms of the nucleotide sequence, use the option
+* Extract the 14 allelic states from the nucleotide sequence, using the option:
 
     `perl extract_alleles.pl DEMO_seq DEMO`
     
-    Note: Please make sure that the input files called "DEMO_seq" must be located under current directory.
+    Note: Please make sure that the input file "DEMO_seq" is accessible under current directory.
 
-* Calculated the predicted vaccine efficacy of candidate virus isolate
+* Calculated the predicted vaccine efficacy of candidate vaccine virus isolate, using the option:
 
-    Unix environment:
+    Unix command:
     
     `Rscript PreVEAB.R DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
     
-    Windows CMD environment:
+    Windows CMD command:
     
     `"C:\Program Files\R\R-3.4.1\bin\Rscript.exe" DEMO Correlation_AdaptiveDistance_VE.pdf outfile.txt`
     
@@ -138,7 +139,8 @@ This scatterplot figure describes the correlation between adaptive distance and 
     
     `Args[1]<-"DEMO"    Args[2]<-"Correlation_AdaptiveDistance_VE.pdf"    Args[3]<-"outfile.txt"    source("PreVEAB.R")`
     
-    Note: Please make sure all input files such as "DEMO_seq", "DEMO", "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" and two     background enrichment score files "ES_EggStrains" and "GISAID_32278_H3N2_HA1_ES_byJul2016" must be located under current directory.
+    Note: Please make sure the alleles file "DEMO" and two background enrichment scores files "ES_EggStrains" and  
+    "GISAID_32278_H3N2_HA1_ES_byJul2016" are all accessible under current directory.
 
 
 ## Author
