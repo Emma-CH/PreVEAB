@@ -116,7 +116,10 @@ Scatterplot figure describes the strongly negative correlation between adaptive 
 
     Windows R environment:
     
-    `Args[1]<-[input_allelic_file]  Args[2]<-[output_pdf_file]  Args[3]<-[output_txt_file]  source("PreVEAB.R")`
+    `Args[1]<-[input_allelic_file]
+    Args[2]<-[output_pdf_file]
+    Args[3]<-[output_txt_file]
+    source("PreVEAB.R")`
 
 
 ### Examples
@@ -139,7 +142,10 @@ Scatterplot figure describes the strongly negative correlation between adaptive 
     
     Windows R environment:
     
-    `Args[1]<-"DEMO"    Args[2]<-"Correlation_AdaptiveDistance_VE.pdf"    Args[3]<-"outfile.txt"    source("PreVEAB.R")`
+    `Args[1]<-"DEMO"
+    Args[2]<-"Correlation_AdaptiveDistance_VE.pdf"
+    Args[3]<-"outfile.txt"
+    source("PreVEAB.R")`
     
     Note: Please make sure the alleles file "DEMO" and two background enrichment scores files "ES_EggStrains" and  
     "GISAID_32278_H3N2_HA1_ES_byJul2016" are all accessible under current directory.
