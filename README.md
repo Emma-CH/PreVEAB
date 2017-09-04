@@ -1,5 +1,5 @@
 # PreVEAB
-PreVEAB takes account of the nucleotide sequence or amino acid states from the 14 pre-defined codon positions and aims to measure the strength of passage adaptation and predict the vaccine efficacy of the candidate vaccine virus isolate.
+PreVEAB considers the influenza A H3N2 hemagglutinin (HA) nucleotide sequence or amino acid states from the 14 pre-defined codon positions and aims to measure the passage adaptation and predict the vaccine efficacy of the candidate vaccine virus isolate.
 
 
 ## Background
@@ -7,11 +7,11 @@ Vaccine efficacy of influenza A H3N2 virus has sharply dropped recently, which m
 
 The mutations accumulated during virus propagation in hosts or cells such as embryonated eggs and mammalian cell lines are defined as passage adaption. And it has been well known that the seed precursor influenza virus used for vaccine production must be generated in eggs, which in turn to causes the egg passage adaptation happened during the vaccine production. Hereby, to find out the impact of egg passage adaptation on vaccine efficacy seems urgent and meaningful.
 
-32,278 H3N2 hemagglutinin (HA1) sequences as well as accessible passage annotation information have been collected from Global Initiative on Sharing All Influenza Data (GISAID) EpiFlu database. Furthermore, 14 codon positions have been identified under strong passage adaptation in embyonated egg using statistical methods.
+32,278 H3N2 HA1 sequences as well as accessible passage annotation information were collected from Global Initiative on Sharing All Influenza Data (GISAID) EpiFlu database. According to these information, a probabilistic method was applied to sample the mutational histories. Furthermore, 14 codon positions were identified under strong passage adaptation in embyonated egg using statistical methods.
 
-In order to quantitative measure the strength of passage adaptation, enrichment scores (ES) of alleles from 14 pre-defined codon positions are calculated for 32,278 background virus sequences and 61 vaccine virus sequences. Principle component analysis (PCA) uncovers the different distributions of background and vaccine strains, and vaccine strains (distantly located from the major clustering of background strains) clearly bear significant evidence of passage adaptation. Subsequently, adaptive distance has been defined to measure the strength of passage adaptation.
+In order to quantitatively measure the strength of passage adaptation, enrichment scores (ES) of alleles from 14 pre-defined codon positions were calculated for 32,278 background virus sequences and 61 vaccine virus sequences. Principle component analysis (PCA) uncovered the different distributions of background and vaccine strains, and vaccine strains (distantly located from the major clustering of background strains) clearly beared significant evidence of passage adaptation. Subsequently, adaptive distance was defined to measure the strength of passage adaptation.
 
-Trends of adaptive distances and vaccine efficacies ranged from 2010 to 2014 year indicate the essential contribution of egg passage adaptation to the reduced vaccine efficacy. Therefore, we developed this computational strategy which provides a way to measure the adaptive distance of candidate vaccine virus strain and in further predict the vaccine efficacy for public consideration. 
+Trends of adaptive distances and vaccine efficacies ranged from 2010 to 2014 year indicated the essential contribution of egg passage adaptation to the reduced vaccine efficacy. Therefore, we developed this computational strategy which provides a way to measure the adaptive distance of candidate vaccine virus strain and in further predict the vaccine efficacy for public consideration. 
 
 
 ## Installing
