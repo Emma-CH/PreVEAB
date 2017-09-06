@@ -24,7 +24,7 @@ PreVEAB can be downloaded from github: https://github.com/Emma-CH/PreVEAB
 ## Running
 
 To run the program, two background enrichment scores files and one alleles file are necessary. 
-Regarding to the preparation of the alleles file, users are able to either directly provide it (Input files - Option I) or generate it using perl script "extract_alleles.pl" from a nucleotide sequence (Input files - Option II).
+Regarding to the alleles file, users are able to either directly provide it (Input files - Option I) or generate it using perl script "extract_alleles.pl" from a nucleotide sequence file (Input files - Option II).
 "PreVEAB.R" targets to generate two outfiles carrying the information of adaptive distance and predicted vaccine efficacy of candidate vaccine virus isolate.
 
 
